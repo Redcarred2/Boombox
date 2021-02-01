@@ -1,4 +1,3 @@
-
 local Boombox = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local Roundify = Instance.new("ImageLabel")
@@ -123,33 +122,33 @@ Visualizer_Roundify_12px.SliceScale = 0.120
 
 -- Scripts:
 
-local function TDSMBL_fake_script() -- Main.Core 
+local function TDSMBL_fake_script() -- Main.Core
 	local script = Instance.new('LocalScript', Main)
 
 	script.Parent.Back.MouseButton1Down:Connect(function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Redcarred2/Boombox/master/back.lua"))()
 	end)
-	
+
 	script.Parent.Visualizer.MouseButton1Down:Connect(function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Redcarred2/Boombox/master/hatfall.lua"))
 		wait(0.2)
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Redcarred2/Boombox/master/visualizer.lua"))
 	end)
-	
+
 	script.Parent.Steal.MouseButton1Down:Connect(function()
 		loadstring(game:HttpGet(('https://raw.githubusercontent.com/antisteal/antisteal-main/master/Anti-Steal.lua'),true))()
 	end)
-	
+
 end
 coroutine.wrap(TDSMBL_fake_script)()
-local function UIWO_fake_script() -- Main.PositioningScript 
+local function UIWO_fake_script() -- Main.PositioningScript
 	local script = Instance.new('LocalScript', Main)
 
 	script.Parent:TweenPosition(UDim2.new(0.5, 0, 0.5, 0), "Out", "Quad", 1)
 	script.Parent.Draggable = true
 end
 coroutine.wrap(UIWO_fake_script)()
-local function KQGV_fake_script() -- Main.Dragify 
+local function KQGV_fake_script() -- Main.Dragify
 	local script = Instance.new('LocalScript', Main)
 
 	local UIS = game:GetService("UserInputService")
@@ -187,7 +186,7 @@ local function KQGV_fake_script() -- Main.Dragify
 	        end
 	    end)
 	end
-	
+
 	dragify(script.Parent)
 end
 coroutine.wrap(KQGV_fake_script)()
