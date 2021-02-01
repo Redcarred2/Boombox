@@ -120,9 +120,7 @@ Visualizer_Roundify_12px.ScaleType = Enum.ScaleType.Slice
 Visualizer_Roundify_12px.SliceCenter = Rect.new(100, 100, 100, 100)
 Visualizer_Roundify_12px.SliceScale = 0.120
 
--- Scripts:
-
-local function TDSMBL_fake_script() -- Main.Core
+local function TDSMBL_fake_script()
 	local script = Instance.new('LocalScript', Main)
 
 	script.Parent.Back.MouseButton1Down:Connect(function()
@@ -141,14 +139,14 @@ local function TDSMBL_fake_script() -- Main.Core
 
 end
 coroutine.wrap(TDSMBL_fake_script)()
-local function UIWO_fake_script() -- Main.PositioningScript
+local function UIWO_fake_script()
 	local script = Instance.new('LocalScript', Main)
 
 	script.Parent:TweenPosition(UDim2.new(0.5, 0, 0.5, 0), "Out", "Quad", 1)
 	script.Parent.Draggable = true
 end
 coroutine.wrap(UIWO_fake_script)()
-local function KQGV_fake_script() -- Main.Dragify
+local function KQGV_fake_script()
 	local script = Instance.new('LocalScript', Main)
 
 	local UIS = game:GetService("UserInputService")
