@@ -7,15 +7,57 @@ local Steal = Instance.new("TextButton")
 local Steal_Roundify_12px = Instance.new("ImageLabel")
 local Visualizer = Instance.new("TextButton")
 local Visualizer_Roundify_12px = Instance.new("ImageLabel")
+HumanDied = false
+local CountSCIFIMOVIELOL = 1
+function SCIFIMOVIELOL(Part0,Part1,Position,Angle)
+	local AlignPos = Instance.new('AlignPosition', Part1); AlignPos.Name = "AliP"..CountSCIFIMOVIELOL
+	AlignPos.ApplyAtCenterOfMass = true;
+	AlignPos.MaxForce = 5772000
+	AlignPos.MaxVelocity = math.huge/9e110;
+	AlignPos.ReactionForceEnabled = false;
+	AlignPos.Responsiveness = 200;
+	AlignPos.RigidityEnabled = false;
+	local AlignOri = Instance.new('AlignOrientation', Part1); AlignOri.Name = "AliO"..CountSCIFIMOVIELOL
+	AlignOri.MaxAngularVelocity = math.huge/9e110;
+	AlignOri.MaxTorque = 5772000
+	AlignOri.PrimaryAxisOnly = false;
+	AlignOri.ReactionTorqueEnabled = false;
+	AlignOri.Responsiveness = 200;
+	AlignOri.RigidityEnabled = false;
+	local AttachmentA=Instance.new('Attachment',Part1); AttachmentA.Name = "Ath"..CountSCIFIMOVIELOL
+	local AttachmentB=Instance.new('Attachment',Part0); AttachmentB.Name = "Ath"..CountSCIFIMOVIELOL
+	AttachmentA.Orientation = Angle or Vector3.new(0,0,0)
+	AttachmentA.Position = Position or Vector3.new(0,0,0)
+	AlignPos.Attachment1 = AttachmentA;
+	AlignPos.Attachment0 = AttachmentB;
+	AlignOri.Attachment1 = AttachmentA;
+	AlignOri.Attachment0 = AttachmentB;
+	CountSCIFIMOVIELOL = CountSCIFIMOVIELOL + 1
+	return {AlignPos,AlignOri,AttachmentA,AttachmentB}
+end
+
+if _G.netted ~= true then
+	_G.netted = true
+	coroutine.wrap(function()
+		settings().Physics.PhysicsEnvironmentalThrottle = Enum.EnviromentalPhysicsThrottle.Disabled
+		settings().Physics.AllowSleep = false
+		game:GetService("RunService").RenderStepped:Connect(function()
+			game:FindFirstChildOfClass("Players").LocalPlayer.MaximumSimulationRadius=math.pow(math.huge,math.huge)
+			sethiddenproperty(game:FindFirstChildOfClass("Players").LocalPlayer,"SimulationRadius",math.huge*math.huge)
+		end)
+	end)()
+end
 
 Boombox.Name = "Boombox"
 Boombox.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Boombox.ResetOnSpawn = false
 
 Main.Name = "Main"
 Main.Parent = Boombox
 Main.BackgroundColor3 = Color3.fromRGB(44, 47, 51)
 Main.BorderSizePixel = 0
-Main.Position = UDim2.new(0.369873822, 0, 0.39434889, 0)
+Main.Draggable = true
+Main.Position = UDim2.new(0.5, -38, 0.5, -3)
 Main.Size = UDim2.new(0, 330, 0, 171)
 
 Roundify.Name = "Roundify"
@@ -120,7 +162,7 @@ Visualizer_Roundify_12px.ScaleType = Enum.ScaleType.Slice
 Visualizer_Roundify_12px.SliceCenter = Rect.new(100, 100, 100, 100)
 Visualizer_Roundify_12px.SliceScale = 0.120
 
-local function TDSMBL_fake_script()
+local function LKODQL_fake_script()
 	local script = Instance.new('LocalScript', Main)
 
 	script.Parent.Back.MouseButton1Down:Connect(function()
@@ -136,17 +178,9 @@ local function TDSMBL_fake_script()
 	script.Parent.Steal.MouseButton1Down:Connect(function()
 		loadstring(game:HttpGet(('https://raw.githubusercontent.com/antisteal/antisteal-main/master/Anti-Steal.lua'),true))()
 	end)
-
 end
-coroutine.wrap(TDSMBL_fake_script)()
-local function UIWO_fake_script()
-	local script = Instance.new('LocalScript', Main)
-
-	script.Parent:TweenPosition(UDim2.new(0.5, 0, 0.5, 0), "Out", "Quad", 1)
-	script.Parent.Draggable = true
-end
-coroutine.wrap(UIWO_fake_script)()
-local function KQGV_fake_script()
+coroutine.wrap(LKODQL_fake_script)()
+local function QHEJQBK_fake_script()
 	local script = Instance.new('LocalScript', Main)
 
 	local UIS = game:GetService("UserInputService")
@@ -187,4 +221,10 @@ local function KQGV_fake_script()
 
 	dragify(script.Parent)
 end
-coroutine.wrap(KQGV_fake_script)()
+coroutine.wrap(QHEJQBK_fake_script)()
+local function EACKZRZ_fake_script()
+	local script = Instance.new('LocalScript', Main)
+	script.Parent:TweenPosition(UDim2.new(0.5, 0, 0.5, 0), "Out", "Quad", 1)
+	script.Parent.Draggable = true
+end
+coroutine.wrap(EACKZRZ_fake_script)()
