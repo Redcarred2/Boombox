@@ -130,9 +130,9 @@ local function TDSMBL_fake_script() -- Main.Core
 	end)
 
 	script.Parent.Visualizer.MouseButton1Down:Connect(function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Redcarred2/Boombox/master/hatfall.lua"))
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/Redcarred2/Boombox/master/hatfall.lua',true))()
 		wait(0.2)
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Redcarred2/Boombox/master/visualizer.lua"))
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/Redcarred2/Boombox/master/visualizer.lua',true))()
 	end)
 
 	script.Parent.Steal.MouseButton1Down:Connect(function()
