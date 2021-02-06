@@ -127,11 +127,13 @@ local function LKODQL_fake_script()
 
 	script.Parent.Back.MouseButton1Down:Connect(function()
 		loadstring(game:HttpGet('https://raw.githubusercontent.com/Redcarred2/Boombox/master/HatFix.lua',true))()
+		wait(0.2)
 		loadstring(game:HttpGet("https://ghostbin.co/paste/sw4wt/raw"))()
 	end)
 
 	script.Parent.Visualizer.MouseButton1Down:Connect(function()
 		loadstring(game:HttpGet('https://raw.githubusercontent.com/Redcarred2/Boombox/master/HatFix.lua',true))()
+		wait(0.2)
 		loadstring(game:HttpGet('https://raw.githubusercontent.com/Redcarred2/Boombox/master/hatfall.lua',true))()
 		wait(0.2)
 		loadstring(game:HttpGet('https://raw.githubusercontent.com/Redcarred2/Boombox/master/visualizer.lua',true))()
